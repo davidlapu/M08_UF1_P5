@@ -13,7 +13,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract PreguntaDao preguntaDao();
 
-    //TODO Puntuacio Dao
+    public abstract PuntuacioDao puntuacioDao();
 
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {

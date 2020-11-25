@@ -12,8 +12,10 @@ public interface PreguntaDao {
     @Query("SELECT * FROM pregunta")
     List<Pregunta> getAll();
 
+    @Query("SELECT * FROM pregunta ORDER BY RANDOM() LIMIT 5")
+    List<Pregunta> get5Rand();
+
     @Insert
     void insert(Pregunta pregunta);
-
 
 }

@@ -3,4 +3,8 @@
     <string name="joc_pre">JOC DE PREGUNTES</string>
     <string name="play">PLAY</string>
     <string name="stats">STATS</string>
+    <string name="hint_fill_name">Introdueix el teu nom…</string>
+    <string name="start">START</string>
+    <string name="must_put_name">Tens que introduir el teu nom</string>
+    <string name="hint_answer">Escriu la resposta i polsa Enter</string>
 </resources>
