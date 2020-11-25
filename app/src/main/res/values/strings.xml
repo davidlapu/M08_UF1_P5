@@ -7,4 +7,6 @@
     <string name="start">START</string>
     <string name="must_put_name">Tens que introduir el teu nom</string>
     <string name="hint_answer">Escriu la resposta i polsa Enter</string>
+    <string name="counter_answer">%1$d de 5</string>
+    <string name="remaning">Seconds remaning: </string>
 </resources>
