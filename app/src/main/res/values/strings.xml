@@ -9,4 +9,7 @@
     <string name="hint_answer">Escriu la resposta i polsa Enter</string>
     <string name="counter_answer">%1$d de 5</string>
     <string name="remaning">Seconds remaning: </string>
+    <string name="puntuacio_final">PUNTUACIÓ FINAL: %1$d</string>
+    <string name="tornar">TORNAR</string>
+    <string name="best_scores">BEST SCORES</string>
 </resources>

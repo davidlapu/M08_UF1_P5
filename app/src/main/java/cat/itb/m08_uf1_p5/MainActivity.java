@@ -11,6 +11,7 @@ import cat.itb.m08_uf1_p5.database.AppDatabase;
 import cat.itb.m08_uf1_p5.database.Pregunta;
 import cat.itb.m08_uf1_p5.database.PreguntaDao;
 import cat.itb.m08_uf1_p5.database.PreguntaRepository;
+import cat.itb.m08_uf1_p5.database.PuntuacioRepository;
 
 public class MainActivity extends AppCompatActivity {
 
