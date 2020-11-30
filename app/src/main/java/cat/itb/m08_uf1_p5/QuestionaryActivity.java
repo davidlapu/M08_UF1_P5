@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -26,6 +27,7 @@ public class QuestionaryActivity extends AppCompatActivity {
     private TextView textViewSecondsRemaining, textViewCounterAnswers, textViewQuestion;
     private List<Pregunta> preguntas;
     private int questionCounter = -1, score = 0;
+    private CountDownTimer countDown;
     static AppDatabase db;
     static PreguntaRepository preguntaRepository;
 
@@ -53,21 +55,25 @@ public class QuestionaryActivity extends AppCompatActivity {
         } else {
             textViewCounterAnswers.setText(getString(R.string.counter_answer, questionCounter + 1));
             textViewQuestion.setText(preguntas.get(questionCounter).getEnunciat());
+            setCountDown();
         }
+
     }
 
     private boolean editTextAnswer(View view, int i, KeyEvent keyEvent) {
         if (i == 66 && keyEvent.getAction() == KeyEvent.ACTION_UP) {
             answerGiven(editTextAnswer.getText().toString());
-            editTextAnswer.setText("");
         }
         return false;
     }
 
     private void answerGiven(String answer) {
+        countDown.cancel();
         if (answer.equalsIgnoreCase(preguntas.get(questionCounter).getResposta())) {
             score++;
         }
+
+        editTextAnswer.setText("");
 
         setNextQuestion();
     }
@@ -80,15 +86,29 @@ public class QuestionaryActivity extends AppCompatActivity {
     }
 
     public void finish() {
-        score = score * 2;
-
         PuntuacioRepository puntuacioRepository= new PuntuacioRepository(db.puntuacioDao());
         puntuacioRepository.insert(new Puntuacio(getIntent().getExtras().getString("name"), score));
 
         Intent intent = new Intent(QuestionaryActivity.this, PuntuacioActivity.class);
         intent.putExtra("score", score);
         startActivity(intent);
+        countDown = null;
     }
 
 
+    private void setCountDown() {
+        countDown = new CountDownTimer(10000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                textViewSecondsRemaining.setText(String.valueOf(((int) millisUntilFinished / 1000)+1));
+            }
+
+            @Override
+            public void onFinish() {
+                if (questionCounter < preguntas.size()) {
+                    answerGiven(editTextAnswer.getText().toString());
+                }
+            }
+        }.start();
+    }
 }

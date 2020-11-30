@@ -11,13 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16sp"
+        android:paddingHorizontal="16sp"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextAnswer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="test pregybta" />
+        tools:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaa adsf sadfsaaaaaaa sdafffffff asdf" />
 
     <TextView
         android:id="@+id/textViewContador"

@@ -12,4 +12,5 @@
     <string name="puntuacio_final">PUNTUACIÓ FINAL: %1$d</string>
     <string name="tornar">TORNAR</string>
     <string name="best_scores">BEST SCORES</string>
+    <string name="reset_stats">Reset Stats</string>
 </resources>
