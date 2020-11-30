@@ -1,7 +1,5 @@
 package cat.itb.m08_uf1_p5;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -9,14 +7,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.net.Authenticator;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.List;
 
 import cat.itb.m08_uf1_p5.database.AppDatabase;
 import cat.itb.m08_uf1_p5.database.Pregunta;
-import cat.itb.m08_uf1_p5.database.PreguntaDao;
 import cat.itb.m08_uf1_p5.database.PreguntaRepository;
 import cat.itb.m08_uf1_p5.database.Puntuacio;
 import cat.itb.m08_uf1_p5.database.PuntuacioRepository;
@@ -30,7 +27,7 @@ public class QuestionaryActivity extends AppCompatActivity {
     private CountDownTimer countDown;
     static AppDatabase db;
     static PreguntaRepository preguntaRepository;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
