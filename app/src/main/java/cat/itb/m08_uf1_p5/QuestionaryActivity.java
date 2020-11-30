@@ -30,8 +30,7 @@ public class QuestionaryActivity extends AppCompatActivity {
     private CountDownTimer countDown;
     static AppDatabase db;
     static PreguntaRepository preguntaRepository;
-
-    //TODO timer
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
